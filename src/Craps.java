@@ -10,7 +10,7 @@ public class Craps {
 		if(rolls.length == 0){
 			return LOSE;
 		}
-		else if (rolls[0] == 7 || rolls[0] == 11){
+		else if (winOnFirstRoll(rolls)) {
 			return WIN;
 		}
 		else if(rolls[0] == 2 || rolls[0] == 3 || rolls[0] == 12){
@@ -28,6 +28,10 @@ public class Craps {
 			}
 			return LOSE;
 		}
+	}
+	
+	public static boolean winOnFirstRoll(int[] rolls) {
+	    return rolls[0] == 7 || rolls[0] == 11;
 	}
 	
 }
